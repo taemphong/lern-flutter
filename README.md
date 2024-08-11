@@ -1,4 +1,5 @@
-# Flutter - Fashion eCommerce app
+# ฝึกพัฒนาโดยการนำโปรเจ็กของ Developer ท่านอื่นนมาฝึกพัฒนาต่อ
+# Flutter - Fashion eCommerce app 
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/91388754/232251489-b98c66f3-3baa-41db-a0d5-984799db45a4.png)
 
 ## Tutorial Video on Youtube:
