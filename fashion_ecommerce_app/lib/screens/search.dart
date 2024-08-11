@@ -63,7 +63,7 @@ class _SearchState extends State<Search> {
                         onChanged: (value) {
                           onSearch(value);
                         },
-                        style: textTheme.headline3?.copyWith(
+                        style: textTheme.displaySmall?.copyWith(
                             fontSize: 15, fontWeight: FontWeight.w400),
                         decoration: InputDecoration(
                           contentPadding: const EdgeInsets.symmetric(
@@ -79,12 +79,12 @@ class _SearchState extends State<Search> {
                             },
                             icon: const Icon(Icons.close),
                           ),
-                          hintStyle: textTheme.headline3?.copyWith(
+                          hintStyle: textTheme.displaySmall?.copyWith(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
                             color: Colors.grey[600],
                           ),
-                          hintText: "e,g.Casual Jeans",
+                          hintText: "search...",
                           border: OutlineInputBorder(
                             borderSide: BorderSide.none,
                             borderRadius: BorderRadius.circular(13),
@@ -162,16 +162,16 @@ class _SearchState extends State<Search> {
                                       bottom: size.height * 0.04,
                                       child: Text(
                                         current.name,
-                                        style: textTheme.headline2,
+                                        style: textTheme.displayMedium,
                                       ),
                                     ),
                                     Positioned(
                                       bottom: size.height * 0.01,
                                       child: RichText(
                                           text: TextSpan(
-                                              text: "€",
+                                              text: "฿",
                                               style:
-                                                  textTheme.subtitle2?.copyWith(
+                                                  textTheme.titleSmall?.copyWith(
                                                 color: primaryColor,
                                                 fontSize: 20,
                                                 fontWeight: FontWeight.bold,
@@ -180,7 +180,7 @@ class _SearchState extends State<Search> {
                                             TextSpan(
                                               text: current.price.toString(),
                                               style:
-                                                  textTheme.subtitle2?.copyWith(
+                                                  textTheme.titleSmall?.copyWith(
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             )

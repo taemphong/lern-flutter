@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:fashion_ecommerce_app/data/app_data.dart';
 import 'package:flutter/material.dart';
 
 import '../model/base_model.dart';
@@ -24,6 +25,7 @@ class Details extends StatefulWidget {
 class _DetailsState extends State<Details> {
   int selectedSize = 3;
   int selectedColor = 0;
+  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +96,7 @@ class _DetailsState extends State<Details> {
                         children: [
                           Text(
                             current.name,
-                            style: textTheme.headline3?.copyWith(fontSize: 22),
+                            style: textTheme.displaySmall?.copyWith(fontSize: 22),
                           ),
                           ReuseableText(
                             price: current.price,
@@ -114,12 +116,12 @@ class _DetailsState extends State<Details> {
                             width: 5,
                           ),
                           Text(current.star.toString(),
-                              style: textTheme.headline5),
+                              style: textTheme.headlineSmall),
                           const SizedBox(
                             width: 8,
                           ),
                           Text("(${current.review.toString()}K+ review)",
-                              style: textTheme.headline5
+                              style: textTheme.headlineSmall
                                   ?.copyWith(color: Colors.grey)),
                           const SizedBox(
                             width: 5,
@@ -145,7 +147,7 @@ class _DetailsState extends State<Details> {
                     const EdgeInsets.only(left: 10.0, top: 18.0, bottom: 10.0),
                 child: Text(
                   "Select Size",
-                  style: textTheme.headline3,
+                  style: textTheme.displaySmall,
                 ),
               ),
             ),
@@ -207,7 +209,7 @@ class _DetailsState extends State<Details> {
                     const EdgeInsets.only(left: 10.0, top: 18.0, bottom: 10.0),
                 child: Text(
                   "Select Color",
-                  style: textTheme.headline3,
+                  style: textTheme.displaySmall,
                 ),
               ),
             ),
@@ -275,14 +277,28 @@ class _DetailsState extends State<Details> {
       elevation: 0,
       backgroundColor: Colors.transparent,
       actions: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.favorite_border,
-            color: Colors.white,
-          ),
-        ),
-      ],
+ IconButton(
+  icon: Icon(
+    isFavorite ? Icons.favorite : Icons.favorite_border,
+    color: isFavorite ? Colors.red : Colors.white,
+  ),
+  onPressed: () {
+    setState(() {
+      isFavorite = !isFavorite;
+      if (isFavorite) {
+        // Add the item to the favorites list
+        favoriteItems.add(widget.data);
+      } else {
+        // Remove the item from the favorites list
+        favoriteItems.remove(widget.data);
+      }
+    });
+
+    // You can perform other actions when the item is added or removed from favorites.
+  },
+)
+
+],
       leading: IconButton(
         onPressed: () {
           Navigator.pop(context);

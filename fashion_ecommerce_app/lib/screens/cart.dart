@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+import 'package:fashion_ecommerce_app/view/CardHomepage.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -15,10 +16,7 @@ class Cart extends StatefulWidget {
   @override
   State<Cart> createState() => _CartState();
 }
-//CodeWithFlexz on Instagram
 
-//AmirBayat0 on Github
-//Programming with Flexz on Youtube
 
 class _CartState extends State<Cart> {
   /// Calculate the Total Price
@@ -110,7 +108,7 @@ class _CartState extends State<Cart> {
                         FadeInUp(
                           delay: const Duration(milliseconds: 250),
                           child: const Text(
-                            "Your cart is empty right now :(",
+                            "Your cart is empty right now ",
                             style: TextStyle(
                                 fontWeight: FontWeight.w400, fontSize: 16),
                           ),
@@ -200,9 +198,9 @@ class _CartState extends State<Cart> {
                                       ),
                                       RichText(
                                           text: TextSpan(
-                                              text: "€",
+                                              text: "฿",
                                               style:
-                                                  textTheme.subtitle2?.copyWith(
+                                                  textTheme.titleSmall?.copyWith(
                                                 fontSize: 22,
                                                 color: primaryColor,
                                                 fontWeight: FontWeight.bold,
@@ -211,7 +209,7 @@ class _CartState extends State<Cart> {
                                             TextSpan(
                                               text: current.price.toString(),
                                               style:
-                                                  textTheme.subtitle2?.copyWith(
+                                                  textTheme.titleSmall?.copyWith(
                                                 fontSize: 17,
                                                 fontWeight: FontWeight.w600,
                                               ),
@@ -222,7 +220,7 @@ class _CartState extends State<Cart> {
                                       ),
                                       Text(
                                         "Size = ${sizes[3]}",
-                                        style: textTheme.subtitle2?.copyWith(
+                                        style: textTheme.titleSmall?.copyWith(
                                           fontSize: 15,
                                           color: Colors.grey,
                                           fontWeight: FontWeight.w400,
@@ -272,7 +270,7 @@ class _CartState extends State<Cart> {
                                                       size.width * 0.02),
                                               child: Text(
                                                 current.value.toString(),
-                                                style: textTheme.subtitle2
+                                                style: textTheme.titleSmall
                                                     ?.copyWith(
                                                   fontSize: 15,
                                                   fontWeight: FontWeight.w600,
@@ -325,7 +323,7 @@ class _CartState extends State<Cart> {
               bottom: 0,
               child: Container(
                 width: size.width,
-                height: size.height * 0.36,
+                height: size.height * 0.40,
                 color: Colors.white,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
@@ -340,7 +338,7 @@ class _CartState extends State<Cart> {
                             Text(
                               "Promo/Student Code or Vourchers",
                               style:
-                                  textTheme.headline3?.copyWith(fontSize: 16),
+                                  textTheme.displaySmall?.copyWith(fontSize: 14),
                             ),
                             const Icon(
                               Icons.arrow_forward_ios_sharp,
@@ -387,7 +385,7 @@ class _CartState extends State<Cart> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => const Cart()));
+                                        builder: (context) => const CardHomePage()));
                               }),
                         ),
                       )

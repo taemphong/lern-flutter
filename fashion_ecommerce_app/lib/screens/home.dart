@@ -1,4 +1,5 @@
 import 'package:animate_do/animate_do.dart';
+
 import 'package:flutter/material.dart';
 
 import '../data/app_data.dart';
@@ -57,12 +58,12 @@ class _HomeState extends State<Home> {
                     children: [
                       RichText(
                         text: TextSpan(
-                          text: "Find your",
-                          style: textTheme.headline1,
+                          text: "W&B",
+                          style: textTheme.displayLarge,
                           children: [
                             TextSpan(
-                              text: " Style",
-                              style: textTheme.headline1?.copyWith(
+                              text: "  SHOP",
+                              style: textTheme.displayLarge?.copyWith(
                                 color: Colors.orange,
                                 fontSize: 45,
                                 fontWeight: FontWeight.bold,
@@ -73,17 +74,13 @@ class _HomeState extends State<Home> {
                       ),
                       RichText(
                         text: const TextSpan(
-                          text: "Be more beautiful with our ",
+                          text: "Welcome to the TOTHNAM HOTSPURS club. ",
                           style: TextStyle(
                             color: Color.fromARGB(186, 0, 0, 0),
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
                           ),
-                          children: [
-                            TextSpan(
-                              text: "suggestions :)",
-                            ),
-                          ],
+                          
                         ),
                       ),
                     ],
@@ -117,7 +114,7 @@ class _HomeState extends State<Home> {
                               ),
                               Text(
                                 current.title,
-                                style: textTheme.subtitle1,
+                                style: textTheme.titleMedium,
                               ),
                             ],
                           ),
@@ -165,8 +162,8 @@ class _HomeState extends State<Home> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Most Popular", style: textTheme.headline3),
-                      Text("See all", style: textTheme.headline4),
+                      Text("Most Popular", style: textTheme.displaySmall),
+                      Text("See all", style: textTheme.headlineMedium),
                     ],
                   ),
                 ),
@@ -204,7 +201,7 @@ class _HomeState extends State<Home> {
                               children: [
                                 Container(
                                   width: size.width * 0.5,
-                                  height: size.height * 0.3,
+                                  height: size.height * 0.2,
                                   margin: const EdgeInsets.all(10),
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(3),
@@ -225,13 +222,13 @@ class _HomeState extends State<Home> {
                                   padding: const EdgeInsets.only(top: 2.0),
                                   child: Text(
                                     current.name,
-                                    style: textTheme.headline2,
+                                    style: textTheme.displayMedium,
                                   ),
                                 ),
                                 RichText(
                                     text: TextSpan(
-                                        text: "€",
-                                        style: textTheme.subtitle2?.copyWith(
+                                        text: "฿ ",
+                                        style: textTheme.titleSmall?.copyWith(
                                           color: primaryColor,
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold,
@@ -239,7 +236,7 @@ class _HomeState extends State<Home> {
                                         children: [
                                       TextSpan(
                                         text: current.price.toString(),
-                                        style: textTheme.subtitle2?.copyWith(
+                                        style: textTheme.titleSmall?.copyWith(
                                           fontWeight: FontWeight.bold,
                                         ),
                                       )
@@ -305,13 +302,13 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.only(top: 10.0),
             child: Text(
               data.name,
-              style: theme.headline2,
+              style: theme.displayMedium,
             ),
           ),
           RichText(
             text: TextSpan(
-              text: "€",
-              style: theme.subtitle2?.copyWith(
+              text: "฿",
+              style: theme.titleSmall?.copyWith(
                 color: primaryColor,
                 fontSize: 26,
                 fontWeight: FontWeight.bold,
@@ -319,7 +316,7 @@ class _HomeState extends State<Home> {
               children: [
                 TextSpan(
                   text: data.price.toString(),
-                  style: theme.subtitle2
+                  style: theme.titleSmall
                       ?.copyWith(fontWeight: FontWeight.w600, fontSize: 25),
                 )
               ],
